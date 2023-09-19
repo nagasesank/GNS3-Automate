@@ -5,10 +5,10 @@ A collection of Python scripts and tools to automate tasks within the GNS3 netwo
 This repository offers a set of Python scripts to automate various tasks within the GNS3 network simulator. By harnessing the power of Python in tandem with GNS3's API, users can swiftly set up, manage, and tear down GNS3 topologies and projects.
 
 ### Features
-Project Management: Create, update, and delete GNS3 projects programmatically.
-Device Operations: Automate the addition, configuration, and removal of devices within GNS3 projects.
-Topology Automation: Define and deploy whole topologies using simple configuration files.
-GNS3 API Integration: Harness the full potential of the GNS3 RESTful API.
+1. Project Management: Create, update, and delete GNS3 projects programmatically.
+2. Device Operations: Automate the addition, configuration, and removal of devices within GNS3 projects.
+3. Topology Automation: Define and deploy whole topologies using simple configuration files.
+4. GNS3 API Integration: Harness the full potential of the GNS3 RESTful API.
 
 ### Prerequisites
 
