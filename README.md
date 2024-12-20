@@ -38,7 +38,7 @@ ios_devices:
       ansible_password: admin
 ```
 
-# Folder Structure
+## Folder Structure
 ```css
 ├── ansible_playbooks/
 │   ├── ios/
@@ -71,7 +71,7 @@ ios_devices:
 └── README.md
 ```
 
-# Usage
+## Usage
 
 1.**Run the Python Script**
 
@@ -91,18 +91,18 @@ If you'd like to run a specific playbook, use the following command:
 ```bash
 ansible-playbook -i inventory.yml ansible_playbooks/ios/configure_hostname.yml
 ```
-# Customization
-## Change Device Name
+## Customization
+### Change Device Name
 To change the device to be managed, modify the device name in the main.py file:
 ```bash
 runner = AnsiblePlaybookRunner(inventory_path, "IOS_Device")
 ```
 Change ```"IOS_Device"``` to the name of your device in GNS3.
 
-## Change Playbooks
+### Change Playbooks
 To change or add new playbooks, place them inside the corresponding directory (e.g., ```ansible_playbooks/ios/``` for Cisco IOS devices). Ensure that the playbook follows the structure of existing playbooks.
 
-## Inventory File
+### Inventory File
 The ```inventory.yml``` file contains the devices to manage. Here is an example configuration:
 ```yaml
 ios_devices:
@@ -127,7 +127,7 @@ nxos_devices:
       ansible_password: admin
 ```
 
-# Commands
+## Commands
 
 | Command |Description 
 |----------|-----------
@@ -135,7 +135,7 @@ nxos_devices:
 |```ansible-playbook -i inventory.yml playbook.yml```   | Run a specific Ansible playbook.  
 |```python3 main.py```    | Manages GNS3 devices and runs all playbooks.   
 
-# Environment Variables
+## Environment Variables
 
 | Command |Description 
 |----------|-----------
@@ -143,7 +143,7 @@ nxos_devices:
 |```GNS3_PORT```   |GNS3 API port. Default is ```3080```.  
 |```PROJECT_ID```    | The GNS3 project ID for the topology. 
 
-# Screenshots
+## Screenshots
 
 Example GNS3 Topology:
 
