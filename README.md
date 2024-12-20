@@ -91,42 +91,6 @@ If you'd like to run a specific playbook, use the following command:
 ```bash
 ansible-playbook -i inventory.yml ansible_playbooks/ios/configure_hostname.yml
 ```
-## Customization
-### Change Device Name
-To change the device to be managed, modify the device name in the main.py file:
-```bash
-runner = AnsiblePlaybookRunner(inventory_path, "IOS_Device")
-```
-Change ```"IOS_Device"``` to the name of your device in GNS3.
-
-### Change Playbooks
-To change or add new playbooks, place them inside the corresponding directory (e.g., ```ansible_playbooks/ios/``` for Cisco IOS devices). Ensure that the playbook follows the structure of existing playbooks.
-
-### Inventory File
-The ```inventory.yml``` file contains the devices to manage. Here is an example configuration:
-```yaml
-ios_devices:
-  hosts:
-    ios_router1:
-      ansible_host: 192.168.1.10
-      ansible_user: admin
-      ansible_password: admin
-
-asa_devices:
-  hosts:
-    asa_firewall1:
-      ansible_host: 192.168.2.10
-      ansible_user: admin
-      ansible_password: admin
-
-nxos_devices:
-  hosts:
-    nxos_switch1:
-      ansible_host: 192.168.3.10
-      ansible_user: admin
-      ansible_password: admin
-```
-
 ## Commands
 
 | Command |Description 
