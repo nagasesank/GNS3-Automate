@@ -1,0 +1,10 @@
+---
+- name: Configure hostname on Cisco IOS-XE device
+  hosts: ios_xe_devices
+  gather_facts: no
+  tasks:
+    - name: Configure hostname
+      ios_config:
+        lines:
+          - hostname {{ inventory_hostname }}
+

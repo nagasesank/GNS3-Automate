@@ -1,0 +1,10 @@
+---
+- name: Configure hostname on Cisco NX-OS device
+  hosts: nxos_devices
+  gather_facts: no
+  tasks:
+    - name: Configure hostname
+      nxos_config:
+        lines:
+          - hostname {{ inventory_hostname }}
+

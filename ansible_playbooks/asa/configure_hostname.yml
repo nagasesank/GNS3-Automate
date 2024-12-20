@@ -1,0 +1,10 @@
+---
+- name: Configure hostname on Cisco ASA device
+  hosts: asa_devices
+  gather_facts: no
+  tasks:
+    - name: Configure hostname
+      asa_config:
+        lines:
+          - hostname {{ inventory_hostname }}
+

@@ -1,0 +1,18 @@
+---
+- name: Backup configuration of F5 BIG-IP device
+  hosts: bigip_devices
+  gather_facts: no
+  tasks:
+    - name: Backup running configuration
+      bigip_command:
+        server: "{{ inventory_hostname }}"
+        user: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        command: "show running-config"
+      register: running_config
+
+    - name: Save the configuration to a file
+      copy:
+        content: "{{ running_config.stdout }}"
+        dest: "./backups/{{ inventory_hostname }}-running-config.txt"
+

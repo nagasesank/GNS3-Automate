@@ -1,0 +1,11 @@
+---
+- name: Configure interface on Cisco NX-OS device
+  hosts: nxos_devices
+  gather_facts: no
+  tasks:
+    - name: Configure Ethernet1/1 with IP address
+      nxos_config:
+        lines:
+          - interface Ethernet1/1
+          - ip address 192.168.4.1/24
+

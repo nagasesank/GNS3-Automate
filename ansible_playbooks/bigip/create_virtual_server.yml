@@ -1,0 +1,14 @@
+---
+- name: Create virtual server on F5 BIG-IP device
+  hosts: bigip_devices
+  gather_facts: no
+  tasks:
+    - name: Create a virtual server
+      bigip_virtual_server:
+        server: "{{ inventory_hostname }}"
+        user: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+        state: present
+        name: vs_{{ inventory_hostname }}
+        destination: 192.168.3.1:80
+

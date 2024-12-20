@@ -1,0 +1,15 @@
+---
+- name: Backup configuration of Cisco NX-OS device
+  hosts: nxos_devices
+  gather_facts: no
+  tasks:
+    - name: Backup running configuration
+      nxos_command:
+        commands: "show running-config"
+      register: running_config
+
+    - name: Save the configuration to a file
+      copy:
+        content: "{{ running_config.stdout[0] }}"
+        dest: "./backups/{{ inventory_hostname }}-running-config.txt"
+

@@ -1,0 +1,11 @@
+---
+- name: Configure interface on Cisco IOS device
+  hosts: ios_devices
+  gather_facts: no
+  tasks:
+    - name: Configure GigabitEthernet0/1 with IP address
+      ios_config:
+        lines:
+          - interface GigabitEthernet0/1
+          - ip address 192.168.1.1 255.255.255.0
+

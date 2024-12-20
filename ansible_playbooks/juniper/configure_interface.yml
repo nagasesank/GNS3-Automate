@@ -1,0 +1,10 @@
+---
+- name: Configure interface on Juniper device
+  hosts: juniper_devices
+  gather_facts: no
+  tasks:
+    - name: Configure ge-0/0/1 with IP address
+      junos_config:
+        lines:
+          - set interfaces ge-0/0/1 unit 0 family inet address 192.168.5.1/24
+

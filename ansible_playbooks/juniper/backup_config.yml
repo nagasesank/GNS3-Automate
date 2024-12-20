@@ -1,0 +1,15 @@
+---
+- name: Backup configuration of Juniper device
+  hosts: juniper_devices
+  gather_facts: no
+  tasks:
+    - name: Backup running configuration
+      junos_command:
+        commands: "show configuration"
+      register: running_config
+
+    - name: Save the configuration to a file
+      copy:
+        content: "{{ running_config.stdout }}"
+        dest: "./backups/{{ inventory_hostname }}-running-config.txt"
+

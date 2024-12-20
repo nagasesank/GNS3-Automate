@@ -1,0 +1,12 @@
+---
+- name: Configure hostname on F5 BIG-IP device
+  hosts: bigip_devices
+  gather_facts: no
+  tasks:
+    - name: Configure hostname
+      bigip_device_info:
+        server: "{{ inventory_hostname }}"
+        user: "{{ ansible_user }}"
+        password: "{{ ansible_password }}"
+      register: device_info
+
